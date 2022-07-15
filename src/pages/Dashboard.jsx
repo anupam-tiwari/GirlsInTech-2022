@@ -5,6 +5,10 @@ import Maps from "../components/Maps";
 import axios from 'axios';
 import { auth } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import mapboxgl from "mapbox-gl";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const Dashboard = () => {
   const [lat, setLat] = useState(null);

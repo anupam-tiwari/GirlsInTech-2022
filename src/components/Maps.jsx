@@ -1,7 +1,13 @@
 import React from 'react'
 import Map, {Marker} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+
+import mapboxgl from "mapbox-gl";
+
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX; 
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const Maps = (props) => {
     const [viewState, setViewState] = React.useState({

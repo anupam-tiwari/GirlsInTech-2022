@@ -3,6 +3,10 @@ import Navbar from "../components/Navbar";
 import Map, { Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import axios from "axios";
+import mapboxgl from "mapbox-gl";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX; 
 
 const Community = () => {
