@@ -17,7 +17,7 @@ const Community = () => {
   });
   const [mapdata, setMapData] = useState([]);
 
-  axios.get("http://localhost:4000/alerts").then((response) => {
+  axios.get("https://hackaathon.herokuapp.com/alerts").then((response) => {
     console.log(response.data);
     setMapData(response.data)
   });

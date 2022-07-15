@@ -35,7 +35,7 @@ const Dashboard = () => {
 	    info:info
     }
     console.log(data)
-    await axios.post("http://localhost:4000/alerts", data).then((response) => {
+    await axios.post("https://hackaathon.herokuapp.com/alerts", data).then((response) => {
       console.log(response.data)
     }
     )
